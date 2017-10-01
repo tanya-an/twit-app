@@ -1,0 +1,49 @@
+<%= form_for(@twitt) do |f| %>
+  <% if @twitt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@twitt.errors.count, "error") %> prohibited this twitt from being saved:</h2>
+
+      <ul>
+      <% @twitt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<h1>Listing Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twitts.each do |twitt| %>
+      <tr>
+        <td><%= twitt.user_id %></td>
+        <td><%= twitt.body %></td>
+        <td><%= link_to 'Show', twitt %></td>
+        <td><%= link_to 'Edit', edit_twitt_path(twitt) %></td>
+        <td><%= link_to 'Destroy', twitt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
+gem 'twitter'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
