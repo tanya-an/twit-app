@@ -8,19 +8,18 @@ class TwittsController < ApplicationController
   end
 
   def create
-  	@twitt = Twitt.create(user_id: current_user.id, 
-                          body: twitts_params[:body], 
+    @twitt = Twitt.create(user_id: current_user.id,
+                          body: twitts_params[:body],
                           image: twitts_params[:image])
     if @twitt.save
-      redirect_to root_path
       flash[:notice] = 'Tweet was successfully created'
     else
-      redirect_to root_path
       flash[:error] = 'Oooops'
     end
+    redirect_to root_path
   end
 
-  private 
+  private
 
   def require_login
     redirect_to home_index_path if current_user.nil?
@@ -29,7 +28,7 @@ class TwittsController < ApplicationController
   def twitts_params
     params.require(:twitt).permit(:body, :image, :image_cache)
   end
-  
+
   def user
     @user ||= current_user
   end
@@ -37,5 +36,4 @@ class TwittsController < ApplicationController
   def twitts_list
     @twitts = Twitt.where(user_id: user.id).order('updated_at DESC')
   end
-
 end
