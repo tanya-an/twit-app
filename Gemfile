@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'carrierwave'
+gem 'mini_magick'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

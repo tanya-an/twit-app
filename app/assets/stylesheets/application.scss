@@ -16,3 +16,16 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+#flash{
+	text-align: center;
+	margin-bottom: 20px;	
+	.notice{
+		background: #9be69b;
+		padding: 5px;
+	}
+	.error{
+		background: rgb(255, 142, 142);
+		padding: 5px;
+	}
+}

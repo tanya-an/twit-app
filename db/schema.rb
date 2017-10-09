@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20171001081413) do
   create_table "twitts", force: :cascade do |t|
     t.integer "user_id"
     t.text "body"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
