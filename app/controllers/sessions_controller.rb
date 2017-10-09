@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session.delete(:user_id)
       flash[:success] = "Sucessfully logged out!"
     end
-    redirect_to root_path
+    redirect_to home_index_path
   end
  
   protected

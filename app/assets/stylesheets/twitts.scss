@@ -1,7 +1,6 @@
 // Place all the styles related to the Twitts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .new-twitt {
 	margin-bottom: 15px;
 	textarea,
@@ -18,6 +17,9 @@
 		display: flex;
 		.twitt-image{
 			width: 30%;
+		}
+		.twitt-txt p{
+			
 		}
 	}
 	.date{

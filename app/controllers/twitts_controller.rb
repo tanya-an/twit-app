@@ -1,5 +1,6 @@
 class TwittsController < ApplicationController
-	before_action :set_twitt, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  before_action :set_twitt, only: [:show, :edit, :update, :destroy]
 
   def index
     twitts_list
@@ -11,15 +12,19 @@ class TwittsController < ApplicationController
                           body: twitts_params[:body], 
                           image: twitts_params[:image])
     if @twitt.save
-      redirect_to twitts_path
+      redirect_to root_path
       flash[:notice] = 'Tweet was successfully created'
     else
-      redirect_to twitts_path
+      redirect_to root_path
       flash[:error] = 'Oooops'
     end
   end
 
   private 
+
+  def require_login
+    redirect_to home_index_path if current_user.nil?
+  end
 
   def twitts_params
     params.require(:twitt).permit(:body, :image, :image_cache)
@@ -32,4 +37,5 @@ class TwittsController < ApplicationController
   def twitts_list
     @twitts = Twitt.where(user_id: user.id).order('updated_at DESC')
   end
+
 end

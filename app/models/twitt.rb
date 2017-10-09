@@ -5,7 +5,6 @@ class Twitt < ActiveRecord::Base
   before_create :post_to_twitter
   mount_uploader :image, ImageUploader
  
-
   def post_to_twitter
   	if image?
     	user.twitter.update_with_media(body, File.new(image.current_path))
@@ -13,6 +12,4 @@ class Twitt < ActiveRecord::Base
     	user.twitter.update(body)
     end
   end
-
-
 end
