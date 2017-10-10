@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* To use gem Carrierwave, you just need to install ImageMagick. 
 
-Things you may want to cover:
+sudo apt-get install imagemagick
 
-* Ruby version
+* Create new app https://apps.twitter.com/
 
-* System dependencies
+* Сreate a file config/secrets.yml
 
-* Configuration
+development:  
+  twitter_api_key: You API Key
+  twitter_api_secret: You API Secret
 
-* Database creation
 
-* Database initialization
+* bundle install
 
-* How to run the test suite
+* rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+* run app
 
-* Deployment instructions
-
-* ...
