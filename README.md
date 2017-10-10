@@ -10,6 +10,7 @@ sudo apt-get install imagemagick
 
 development:  
   twitter_api_key: You API Key
+  
   twitter_api_secret: You API Secret
 
 
